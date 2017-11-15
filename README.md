@@ -2,9 +2,9 @@
 
 ## Key requirement: company needs documentation that salaried employees did or didn't get overtime each week
 
-- post -> date:date rationale:text
-- User -> Devise
-- AdminUser -> STI
+- xpost -> date:date rationale:text
+- xUser -> Devise
+- xAdminUser -> STI
 
 ## Features:
 - Approval Workflow
