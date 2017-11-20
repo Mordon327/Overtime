@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 describe 'navigate' do
@@ -31,6 +30,7 @@ describe 'navigate' do
   describe 'new' do
     it 'has a link from the homepage' do
       visit root_path
+
       click_link("new_post_from_nav")
       expect(page.status_code).to eq(200)
     end
@@ -45,7 +45,7 @@ describe 'navigate' do
       expect(page.status_code).to eq(200)
     end
   end
-  
+
   describe 'creation' do
     before do
       visit new_post_path
@@ -74,18 +74,13 @@ describe 'navigate' do
 
   describe 'edit' do
     before do
-      @post = FactoryGirl.create(:post)
-    end
-
-    it 'can be reached by clicking edit on index page' do
-      visit posts_path
-
-      click_link("edit_#{@post.id}")
-      expect(page.status_code).to eq(200)
+      @edit_user = User.create(first_name: "asdf", last_name: "asdf", email: "asdfasdf@asdf.com", password: "asdfasdf", password_confirmation: "asdfasdf")
+      login_as(@edit_user, :scope => :user)
+      @edit_post = Post.create(date: Date.today, rationale: "asdf", user_id: @edit_user.id)
     end
 
     it 'can be edited' do
-      visit edit_post_path(@post)
+      visit edit_post_path(@edit_post)
 
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "Edited content"
@@ -93,5 +88,27 @@ describe 'navigate' do
 
       expect(page).to have_content("Edited content")
     end
+
+    it 'cannot be edited by a non authorized user' do
+      logout(:user)
+      non_authorized_user = FactoryGirl.create(:non_authorized_user)
+      login_as(non_authorized_user, :scope => :user)
+
+      visit edit_post_path(@edit_post)
+
+      expect(current_path).to eq(root_path)
+    end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
