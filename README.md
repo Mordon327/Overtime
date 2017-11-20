@@ -22,3 +22,5 @@
 ## Refactor TODOS:
 - Refactor user association integration test in post_spec
 - Refactor posts/_form for admin
+- Fix post_spec.rb:82 to use factories
+- Fix post_spec.rb:50
