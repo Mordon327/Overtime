@@ -27,4 +27,4 @@
 - x Fix post_spec.rb:50
 
 ## TODOS:
-- Integrate validation for phone attribue in user:
+- x Integrate validation for phone attribue in user:
