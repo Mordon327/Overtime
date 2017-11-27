@@ -22,6 +22,9 @@
 
 ## Refactor TODOS:
 - x Refactor user association integration test in post_spec
-- Refactor posts/_form for admin
+- x Refactor posts/_form for admin
 - x Fix post_spec.rb:82 to use factories
 - x Fix post_spec.rb:50
+
+## TODOS:
+- Integrate validation for phone attribue in user:
