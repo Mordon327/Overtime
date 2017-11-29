@@ -9,7 +9,7 @@
 
 puts "Created one user named 'Testing Tester'"
 
-AdminUser.create(
+@admin = AdminUser.create(
 		email: "admin@test.com", 
 		password: "asdfasdf", 
 		password_confirmation: "asdfasdf", 
@@ -20,7 +20,6 @@ AdminUser.create(
 puts "Created one admin user named Admin Name"
 
 100.times do |post|
-	
 	Post.create!(
 		date: Date.today, 
 		rationale: "#{post} rationale content", 
@@ -34,3 +33,13 @@ puts "100 posts created"
 	AuditLog.create!(user_id: User.last.id, status: 0, start_date: (Date.today - 6.days))
 end
 puts "100 audit logs have been created."
+
+15.times do |post|
+	Post.create!(
+		date: Date.today, 
+		rationale: "#{post} rationale content", 
+		user_id: @admin.id, 
+		overtime_request: 2.5,
+		)
+end
+puts "15 admin posts created"
