@@ -22,7 +22,7 @@ puts "Created one admin user named Admin Name"
 100.times do |post|
 	Post.create!(
 		date: Date.today, 
-		rationale: "#{post} rationale content", 
+		rationale: "#{post} rationale content content Lorem ipusum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ", 
 		user_id: @user.id, 
 		overtime_request: 2.5,
 		)
