@@ -1,4 +1,4 @@
-@user = User.create!(
+@employee = Employee.create!(
 	email: "test@test.com",
 	first_name: "Testing",
 	last_name: "Tester",
@@ -7,7 +7,7 @@
 	phone: "8018574399",
 	)
 
-puts "Created one user named 'Testing Tester'"
+puts "Created one employee named 'Testing Tester'"
 
 @admin = AdminUser.create(
 		email: "admin@test.com", 
@@ -44,8 +44,8 @@ puts "100 audit logs have been created."
 end
 puts "15 admin posts created"
 
-AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 6.days))
-AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 13.days))
-AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 20.days))
+AuditLog.create!(user_id: @employee.id, status: 0, start_date: (Date.today - 6.days))
+AuditLog.create!(user_id: @employee.id, status: 0, start_date: (Date.today - 13.days))
+AuditLog.create!(user_id: @employee.id, status: 0, start_date: (Date.today - 20.days))
 
 puts "3 audit logs have been created"
