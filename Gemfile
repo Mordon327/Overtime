@@ -8,6 +8,8 @@ end
 
 
 gem 'rails', '~> 5.1.4'
+gem 'sqlite3', '~> 1.3', '>= 1.3.13'
+gem 'pg', '~> 0.21.0'
 gem 'puma'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -22,6 +24,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.1'
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
+  gem 'factory_girl_rails', '~> 4.9'
 end
 
 group :development do
@@ -37,7 +40,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.3'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-gem 'factory_girl_rails', '~> 4.9'
 gem 'gritter', '~> 1.2'
 gem 'administrate', '~> 0.8.1'
 gem 'bourbon', '~> 4.3', '>= 4.3.4'
