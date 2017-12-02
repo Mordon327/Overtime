@@ -23,7 +23,7 @@ puts "Created one admin user named Admin Name"
 	Post.create!(
 		date: Date.today, 
 		rationale: "#{post} rationale content content Lorem ipusum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ", 
-		user_id: @user.id, 
+		user_id: @employee.id, 
 		overtime_request: 2.5,
 		)
 end
