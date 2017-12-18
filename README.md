@@ -15,6 +15,7 @@
 - Email summary to managers for approval
 - x Needs to be documented if employee did not log overtime
 - Need to update end date when confirmed
+- Need to update audit log status when an overtime rejected
 
 ## UI:
 - x Bootstrap -> formatting
